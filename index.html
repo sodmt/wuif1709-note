@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习题</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*数组扩大2倍*/
+	function a(num){
+		for(var i = 0;i < num.length;i++){
+			num[i] = num[i]*2;
+		}
+		document.write(num);
+	}
+	a(num=[3,4,5,2,6,1]);
+</script>
+
+<script>
+/*数组去空*/
+	function a(arr){
+		var newarr =[];
+		for(var i = 0;i < arr.length;i++){
+			if(arr[i] != undefined){
+				newarr[newarr.length]=arr[i]
+			}
+		}document.write(newarr);
+	}
+	a([3,28,23,,537,55,731]);
+</script>
+
+<script>
+/*数组反向输出*/
+	function a(num){
+		for(var i = 0;i < num.length;i++){
+			for(var j = i + 1;j < num.length;j++){
+				var a = num[i];
+				num[i] = num[j];
+				num[j] = a;	
+			}
+		}
+		document.write(num);
+	}
+	a(num=[5,3,8,9,6]);
+</script>
+
+<script>
+/*数组合并*/
+	function a(num,num1){
+			for(var i = 0;i < num.length;i++){
+					num1[num1.length] = num[i];
+			}
+			document.write(num1);
+	}
+	a(num=[2,6,8,7,6],num1=['dgw','tw','yib','hjk']);
+</script>
+
+<script>
+/*数组排序*/
+	function a(num){
+		for(var i = 0;i < num.length;i++){
+			for(var j = i + 1;j < num.length;j++){
+				if(num[i] > num[j]){
+				var a = num[i];
+				num[i] = num[j];
+				num[j] = a;	
+				}
+			}
+		}
+		document.write(num);
+	}
+	a(num=[10,53,48,29,87]);
+</script>
+
+<script>
+/*数组最大最小值*/
+	function a(arr,str){
+		str = str || 'max';
+		var max = arr[0];
+		var min = arr[0];
+		for(var i = 0;i < arr.length;i++){
+			if(max < arr[i]){
+				max = arr[i];	
+			}
+		}
+		for(var j = 0;j < arr.length;j++){
+			if(min > arr[j]){
+				min = arr[j];
+			}
+		}
+		var sum = 0;
+		var avg;
+		for(var k = 0;k < arr.length;k++){
+			sum = sum + arr[k];
+		}
+		avg = sum/(arr.length);
+		if(str == 'max'){
+			return max;
+		}else if(str == 'min'){
+			return min;
+		}else if(str == 'avg'){
+			return avg;
+		}
+	}
+	var arr = [8,5,7,2,6,4,9,1,3];
+	console.log(a(arr,'avg'));
+</script>
+
+<script>
+/*数组最大最小值*/
+	function a(num){
+		for(var i = 0;i < num.length;i++){
+			if(num[i] > 0){
+				document.write(num[i] + ' ');
+			}
+		}
+	}
+	a(num=[-5,-18,56,-73,89,23,-42]);
+</script>
+
+<script>
+/*数组数据类型*/
+	function lei(num){
+		for(var b=0;b< num.length;b++){
+			if(typeof (num[b]) == 'number'){
+				document.write(`数据类型为'number'：${num[b]}`);
+				document.write('<br>');
+			}
+			if(typeof (num[b]) == 'object'){
+				document.write(`数据类型为'null'：${num[b]}`);
+				document.write('<br>');
+			}
+			if(typeof (num[b]) == 'undefined'){
+				document.write(`数据类型为'undefined'：${num[b]}`);
+				document.write('<br>');
+			}
+			if(typeof (num[b]) == 'string'){
+				document.write(`数据类型为'string'：${num[b]}`);
+				document.write('<br>');
+			}
+			if(typeof (num[b]) == 'boolean'){
+				document.write(`数据类型为'boolean'：${num[b]}`);
+				document.write('<br>');
+			}
+		}
+	}
+	lei(num=[1,2,3,'+',true,null,false,undefined]);	
+</script>
+
+<script>
+/*乘法表*/
+	function cheng(num){
+		var a = 1;
+		while(a<=num){
+			var b =1;
+			while(b<=a){
+				document.write(`${a}*${b}=${a*b}`); 
+				document.write('&nbsp;');
+				b++;
+			}
+			document.write('<br>');
+			a++;
+		}
+		}
+		cheng(9);
+	
+		var i =1;
+		while(i<9){
+			var j = 1;
+			while(j <= i){
+				document.write(`${i}*${j}=${i*j}`);
+				document.write(`&nbsp`);
+			}
+			document.write(`<br>`);
+			i++;
+		}
+</script>
+
+<script>
+/*十乘十表格*/
+	document.write("<table  border='1' width='300px' height='300px' cellspacing='0'>");
+	    function ta (num){
+	        for(i = 1 ; i <= num; i++){
+	            document.write(`<tr>`);
+	            for(j=1; j<=num; j++){
+	                document.write(`<th>`)
+	            }
+	        }
+	        document.write(`</table>`);
+	    }
+	    ta(12);
+</script>
+
+<script>
+/*金字塔*/
+	function jin (num){
+    for(var i =0;i < num;i++){
+        for(var j = 0;j < num-1-i;j++){
+            document.write('&nbsp ');
+        }
+        for(var k = 0;k < i+1;k++){
+            document.write('*&nbsp;&nbsp;&nbsp;');
+        }
+        document.write('<br>');
+    }    
+	}
+	jin(10);
+</script>
+
+<script>
+/*水仙花*/
+	for(var i = 100; i <1000; i++){   
+		var a = i % 10;
+		var b = (i-a)/ 10 % 10;
+		var c = (i-b*10-a) / 100;
+		if(a*a*a+b*b*b+c*c*c == i){console.log(`这是水仙花的数${i}`)};
+	}
+	for(d = 1;d < 10;d++){
+		for(e=0;e<10;e++){
+			for(f=0;f<10;f++){
+				if((d**3+e**3+f**3) == (d*100+e*10+f)){console.log(`这是水仙花的数${d*100+e*10+f}`)}
+			}
+		}
+	}
+</script>
+
+<script>
+/*四则运算*/
+	function suan (a,ope,b){
+		/*var num1 = Number(prompt('请输入数字'));
+			if(num1)
+		var ope = prompt('请输入运算符');
+		var num2 = Number(prompt('请输入数字'));*/
+		switch(ope){
+			case('+'):document.write(`a + b=${a+b}`);
+			break;
+			case('-'):document.write(`a - b=${a-b}`);
+			break;
+			case('*'):document.write(`a * b=${a*b}`);
+			break;
+			case('/'):document.write(`a / b=${a/b}`);
+			break;
+			case('%'):document.write(`a % b=${a%b}`);
+			break;
+			default:alert('输入有误');
+		}
+	}
+	suan(5,'+',2);
+</script>
+
+<script>
+/*100以内的奇偶数*/
+	for(var i =1;i<=100;i++){
+		if(i % 2 == 0){console.log(`这是100以内的偶数${i}`)}
+		else{console.log(`这是100以内的奇数${i}`)}
+		// 或if(i % 2 = 1){console.log(`这是100以内的奇数${i}`)}
+	} 
+</script>
+
+<script>
+/*星期*/
+	var num = prompt('请输入日期');
+	switch(num){
+		case(num='1'):alert('星期一');
+		break;
+		case(num='2'):alert('星期二');
+		break;
+		case(num='3'):alert('星期三');
+		break;
+		case(num='4'):alert('星期四');
+		break;
+		case(num='5'):alert('星期五');
+		break;
+		case(num='6'):alert('星期六');
+		break;
+		case(num='7'):alert('星期日');
+		break;
+		default:alert('输入有误')
+	}
+</script>
+
+<script>
+/*成绩*/
+	var deat = prompt('请输入成绩');
+	if(deat>=60 && deat<=100){
+		alert('及格');
+		if(deat<=100 && deat>=90){
+			alert('优秀');
+	}
+		if(deat<90 && deat>=80){
+			alert('良好');
+	}
+		if(deat<80 && deat>=70){
+			alert('不错');
+	}
+		if(deat<70 && deat>=60){
+			alert('继续加油');
+	}
+	}
+	else if(deat<60 && deat>=0){
+		alert('不及格');
+		if(deat<60 && deat>=40){
+			alert('望努力');
+		}
+		if(deat<40 && deat>=0){
+			alert('好好学习吧！');
+		}
+	}
+</script>
+
+<script>
+/*鸡兔*/
+	for(j=1;j<=34;j++){
+		for(t=1;t<=34-j;t++){
+			if(j+t==34&&j*2+t*4==96){
+				document.write(`鸡总共有${j}只`);
+				document.write("<br>");
+				document.write(`兔总共有${t}只`);
+			}
+		}
+	}
+</script>
+
+<script>
+/*买书*/
+	for(var l=1;l<200;l++){
+		for(var c=1;c<20;c++){
+			for(var j=1;j<10;j++){
+				if(l+c+j==100&&l*0.5+c*5+j*10==100){
+					document.write(`一共有${l}本练习本`);
+					document.write("<br>");
+					document.write(`一共有${c}本参考书`);
+					document.write("<br>");
+					document.write(`一共有${j}本教材`);
+				}	
+			}
+		}
+	}
+</script>
+
+<script>
+/*操场*/
+	for(i = 100;i < 200;i++){
+		if(i % 3==1){
+			if(i % 4==2){
+				if(i % 5==3){
+					document.write(`一共有${i}`);
+				}
+			}
+		}
+	}
+</script>
